@@ -20,14 +20,14 @@ Queue* PushQueue(Queue* queue) {
       break;
     }
     queue->Push(data);
-    std::cout << "Добавлен элемент со значением: " << data << "\n";
+    std::cout << "Добавлен элемент со значением: " << data << '\n';
   }
   return queue;
 };
 
 void PrintQueue(Queue* queue) {
   queue->Print();
-  std::cout << "\n";
+  std::cout << '\n';
 }
 
 void DeleteQueue(Queue* queue) {
