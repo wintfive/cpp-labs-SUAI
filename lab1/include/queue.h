@@ -14,6 +14,7 @@ public:
   void Push(int data);
   int  Pop();
   void Print();
+  int  Spread();
 };
 
 #endif /* QUEUE */

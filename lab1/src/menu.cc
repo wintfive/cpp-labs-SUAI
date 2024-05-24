@@ -46,6 +46,7 @@ Queue* SelectOption(Queue* queue) {
     PrintQueue(queue);
     break;
   case 4:
+    FindSpread(queue);
     break;
   case 5:
     break;

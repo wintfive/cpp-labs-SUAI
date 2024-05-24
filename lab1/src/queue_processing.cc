@@ -49,6 +49,20 @@ void PrintQueue(Queue* queue) {
   std::cout << '\n';
 }
 
+void FindSpread(Queue* queue) {
+  int spread = 0;
+  try {
+    spread = queue->Spread();
+  }
+  catch (const std::logic_error& e) {
+    std::cerr << e.what() << '\n';
+    return;
+  }
+  std::cout
+    << "Размах для элементов с нечетным порядковым номером равен: "
+    << spread << '\n';
+}
+
 void DeleteQueue(Queue* queue) {
   delete queue;
 }
