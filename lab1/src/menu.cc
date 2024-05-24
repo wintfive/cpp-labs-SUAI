@@ -36,24 +36,24 @@ void ContinueMenu() {
 Queue* SelectOption(Queue* queue) {
   int option = StoiExceptionsProcessing(0);
   switch (option) {
-    case 1:
-      queue = PushQueue(queue);
-      break;
-    case 2:
-      break;
-    case 3:
-      PrintQueue(queue);
-      break;
-    case 4:
-      break;
-    case 5:
-      break;
-    case 6:
-      break;
-    case 7:
-      std::cout << "Программа завершена.\n";
-      DeleteQueue(queue);
-      exit(0);
+  case 1:
+    queue = PushQueue(queue);
+    break;
+  case 2:
+    break;
+  case 3:
+    PrintQueue(queue);
+    break;
+  case 4:
+    break;
+  case 5:
+    break;
+  case 6:
+    break;
+  case 7:
+    std::cout << "Программа завершена.\n";
+    DeleteQueue(queue);
+    exit(0);
   }
   ContinueMenu();
   return queue;
