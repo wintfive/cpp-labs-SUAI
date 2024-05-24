@@ -88,3 +88,11 @@ int Queue::Spread() {
 
   return max_element - min_element;
 }
+
+void Queue::Merge(Queue* second) {
+  Element* current = second->head;
+  while (current != nullptr) {
+    Push(current->data);
+    current = current->prev;
+  }
+}

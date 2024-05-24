@@ -4,6 +4,7 @@
 #include <iostream>
 
 Queue* copied_queue = new Queue();
+Queue* merged_queue = new Queue();
 
 /* функция очистки экрана через консоли escape-последовательности */
 void ClearScreen() {
@@ -56,6 +57,9 @@ Queue* SelectOption(Queue* queue) {
     PrintQueue(copied_queue);
     break;
   case 6:
+    merged_queue = MergeQueues(queue, copied_queue);
+    std::cout << "Слияние очередей прошло успешно!\n";
+    PrintQueue(merged_queue);
     break;
   case 7:
     std::cout << "Программа завершена.\n";

@@ -16,6 +16,7 @@ public:
   int    Pop();
   void   Print();
   int    Spread();
+  void   Merge(Queue* second);
 };
 
 #endif /* QUEUE */

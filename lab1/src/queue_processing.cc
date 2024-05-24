@@ -68,6 +68,12 @@ Queue* CopyQueue(Queue* queue) {
   return copied_queue;
 }
 
+Queue* MergeQueues(Queue* first, Queue* second) {
+  Queue* merged_queue = new Queue(*first);
+  merged_queue->Merge(second);
+  return merged_queue;
+}
+
 void DeleteQueue(Queue* queue) {
   delete queue;
 }
