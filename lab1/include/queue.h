@@ -10,11 +10,12 @@ private:
 public:
   Queue();
   ~Queue();
-  /* TODO:  конструктор копирования, конструктор присваивания */
-  void Push(int data);
-  int  Pop();
-  void Print();
-  int  Spread();
+  Queue(const Queue& original);
+  Queue& operator=(const Queue& original);
+  void   Push(int data);
+  int    Pop();
+  void   Print();
+  int    Spread();
 };
 
 #endif /* QUEUE */

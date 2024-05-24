@@ -4,6 +4,7 @@
 #include <limits.h>
 
 Queue::Queue() : head(nullptr), tail(nullptr) {};
+
 Queue::~Queue() {
   while (head != nullptr) {
     Element* current = head;
@@ -11,6 +12,22 @@ Queue::~Queue() {
     delete current;
   }
 };
+
+Queue::Queue(const Queue& original) : head(nullptr), tail(nullptr) {
+  Element* current = original.head;
+  while (current != nullptr) {
+    Push(current->data);
+    current = current->prev;
+  }
+}
+
+Queue& Queue::operator=(const Queue& original) {
+  if (this != &original) {
+    this->~Queue();
+    new (this) Queue(original);
+  }
+  return *this;
+}
 
 void Queue::Push(int data) {
   Element* element = new Element(data);

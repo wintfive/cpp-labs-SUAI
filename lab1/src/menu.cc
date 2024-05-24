@@ -3,6 +3,8 @@
 #include "../include/secondary_functions.h"
 #include <iostream>
 
+Queue* copied_queue = new Queue();
+
 /* функция очистки экрана через консоли escape-последовательности */
 void ClearScreen() {
   std::cout << "\033[2J\033[1;1H";
@@ -49,6 +51,9 @@ Queue* SelectOption(Queue* queue) {
     FindSpread(queue);
     break;
   case 5:
+    copied_queue = CopyQueue(queue);
+    std::cout << "Очередь была успешно скопирована!\n";
+    PrintQueue(copied_queue);
     break;
   case 6:
     break;

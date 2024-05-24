@@ -63,6 +63,11 @@ void FindSpread(Queue* queue) {
     << spread << '\n';
 }
 
+Queue* CopyQueue(Queue* queue) {
+  Queue* copied_queue = new Queue(*queue);
+  return copied_queue;
+}
+
 void DeleteQueue(Queue* queue) {
   delete queue;
 }

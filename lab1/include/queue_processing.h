@@ -7,6 +7,7 @@ Queue* PushQueue(Queue* queue);
 Queue* PopQueue(Queue* queue);
 void   PrintQueue(Queue* queue);
 void   FindSpread(Queue* queue);
+Queue* CopyQueue(Queue* queue);
 void   DeleteQueue(Queue* queue);
 
 #endif /* QUEUE_PROCESSING */
