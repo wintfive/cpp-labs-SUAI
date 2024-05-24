@@ -4,6 +4,7 @@
 
 Queue* CreateQueue();
 Queue* PushQueue(Queue* queue);
+Queue* PopQueue(Queue* queue);
 void   PrintQueue(Queue* queue);
 void   DeleteQueue(Queue* queue);
 

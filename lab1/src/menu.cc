@@ -40,6 +40,7 @@ Queue* SelectOption(Queue* queue) {
     queue = PushQueue(queue);
     break;
   case 2:
+    queue = PopQueue(queue);
     break;
   case 3:
     PrintQueue(queue);

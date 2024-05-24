@@ -7,7 +7,7 @@ int StoiExceptionsProcessing() {
   while (std::cin >> str) {
     if (str == "exit") {
       throw std::logic_error(
-        "Введена команда 'exit', добавление элементов прекращено");
+        "Введена команда 'exit', добавление элементов прекращено.");
     }
     try {
       number = std::stoi(str);
@@ -23,6 +23,23 @@ int StoiExceptionsProcessing() {
   }
 
   return number;
+}
+
+void StoiExceptionsProcessing(char) {
+  std::string str = "";
+
+  while (std::cin >> str) {
+    if (str == "exit") {
+      throw std::logic_error(
+        "Введена команда 'exit', извлечение элементов прекращено.");
+    }
+    if (str == "yes") {
+      return;
+    }
+    else {
+      std::cerr << "Такой команды не существует, попробуйте еще раз: ";
+    }
+  }
 }
 
 int StoiExceptionsProcessing(int) {

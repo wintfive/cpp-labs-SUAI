@@ -12,6 +12,7 @@ public:
   ~Queue();
   /* TODO:  конструктор копирования, конструктор присваивания */
   void Push(int data);
+  int  Pop();
   void Print();
 };
 

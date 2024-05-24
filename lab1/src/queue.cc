@@ -22,6 +22,17 @@ void Queue::Push(int data) {
   }
 }
 
+int Queue::Pop() {
+  if (head == nullptr) {
+    throw std::logic_error("Очередь пуста.");
+  }
+  Element* current = head;
+  int      data    = head->data;
+  head             = head->prev;
+  delete current;
+  return data;
+}
+
 void Queue::Print() {
   Element* current = head;
   std::cout << "head                       tail\n"
