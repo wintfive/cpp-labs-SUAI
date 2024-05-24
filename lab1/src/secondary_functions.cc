@@ -5,6 +5,10 @@ int StoiExceptionsProcessing() {
   int         number = 0;
 
   while (std::cin >> str) {
+    if (str == "exit") {
+      throw std::logic_error(
+        "Введена команда 'exit', добавление элементов прекращено");
+    }
     try {
       number = std::stoi(str);
       break;

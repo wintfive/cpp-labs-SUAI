@@ -8,10 +8,20 @@ Queue* CreateQueue() {
 };
 
 Queue* PushQueue(Queue* queue) {
-  std::cout << "Напишите значение добавляемого элемента: ";
-  int data = StoiExceptionsProcessing();
-  queue->Push(data);
-  std::cout << "Добавлен элемент со значением: " << data << "\n";
+  int data = 0;
+  while (true) {
+    std::cout << "Напишите значение добавляемого элемента или напишите "
+                 "exit, если хотите перестать добавлять элементы: ";
+    try {
+      data = StoiExceptionsProcessing();
+    }
+    catch (const std::logic_error& e) {
+      std::cerr << e.what() << '\n';
+      break;
+    }
+    queue->Push(data);
+    std::cout << "Добавлен элемент со значением: " << data << "\n";
+  }
   return queue;
 };
 
