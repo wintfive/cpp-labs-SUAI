@@ -1,6 +1,5 @@
 #ifndef QUEUE_PROCESSING
 #define QUEUE_PROCESSING
-// #include "queue.h"
 #include "queue1.h"
 
 Queue1* CreateQueue();

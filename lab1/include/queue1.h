@@ -2,7 +2,7 @@
 #define QUEUE1
 #include "queue.h"
 
-class Queue1 : public Queue {
+class Queue1 : private Queue {
 public:
   Queue1();
   ~Queue1();
