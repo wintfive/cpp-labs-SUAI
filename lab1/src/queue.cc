@@ -28,6 +28,14 @@ Queue& Queue::operator=(const Queue& original) {
   return *this;
 }
 
+Queue::Element* Queue::GetHead() {
+  return head;
+};
+
+Queue::Element* Queue::GetTail() {
+  return tail;
+};
+
 void Queue::Push(int data) {
   Element* element = new Element(data);
   if (head == nullptr) {

@@ -3,10 +3,6 @@
 #include "queue.h"
 
 class Queue1 : public Queue {
-private:
-  Element* head;
-  Element* tail;
-
 public:
   Queue1();
   ~Queue1();

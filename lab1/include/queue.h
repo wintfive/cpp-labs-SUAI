@@ -17,11 +17,13 @@ public:
   Queue();
   ~Queue();
   Queue(const Queue& original);
-  Queue& operator=(const Queue& original);
-  void   Push(int data);
-  int    Pop();
-  void   Print() const;
-  void   Merge(Queue* second);
+  Queue&   operator=(const Queue& original);
+  Element* GetHead();
+  Element* GetTail();
+  void     Push(int data);
+  int      Pop();
+  void     Print() const;
+  void     Merge(Queue* second);
 };
 
 #endif /* QUEUE */

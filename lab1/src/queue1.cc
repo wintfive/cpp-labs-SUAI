@@ -2,35 +2,23 @@
 #include <iostream>
 #include <limits.h>
 
-Queue1::Queue1() : head(nullptr), tail(nullptr) {};
+Queue1::Queue1() : Queue() {};
 
 Queue1::~Queue1() {
-  while (head != nullptr) {
-    Element* current = head;
-    head             = head->prev;
-    delete current;
-  }
+  Queue::~Queue();
 };
 
-Queue1::Queue1(const Queue1& original) : head(nullptr), tail(nullptr) {
-  Element* current = original.head;
-  while (current != nullptr) {
-    Push(current->data);
-    current = current->prev;
-  }
-}
-
+Queue1::Queue1(const Queue1& original) : Queue(original) {}
 
 Queue1& Queue1::operator=(const Queue1& original) {
   if (this != &original) {
-    this->~Queue1();
-    new (this) Queue1(original);
+    Queue::operator=(original);
   }
   return *this;
 }
 
 int Queue1::Spread() {
-  Element* current     = head;
+  Element* current     = GetHead();
   int      max_element = INT_MIN;
   int      min_element = INT_MAX;
 
@@ -55,44 +43,17 @@ int Queue1::Spread() {
 }
 
 void Queue1::Push(int data) {
-  Element* element = new Element(data);
-  if (head == nullptr) {
-    head = tail = element;
-  }
-  else {
-    tail->prev = element;
-    tail       = element;
-  }
+  Queue::Push(data);
 }
 
 int Queue1::Pop() {
-  if (head == nullptr) {
-    throw std::logic_error("Очередь пуста.");
-  }
-  Element* current = head;
-  int      data    = head->data;
-  head             = head->prev;
-  delete current;
-  return data;
+  return Queue::Pop();
 }
 
 void Queue1::Print() const {
-  Element* current = head;
-  int      counter = 0;
-  std::cout << "         head                       tail\n"
-            << "         ------------------------------>\n"
-            << "Очередь: ";
-  while (current != nullptr) {
-    ++counter;
-    std::cout << current->data << " (" << counter << ") | ";
-    current = current->prev;
-  }
+  Queue::Print();
 }
 
 void Queue1::Merge(Queue1* second) {
-  Element* current = second->head;
-  while (current != nullptr) {
-    Push(current->data);
-    current = current->prev;
-  }
+  Queue::Merge(second);
 }
