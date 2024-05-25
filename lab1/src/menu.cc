@@ -1,12 +1,11 @@
-#include "../include/queue.h"
+// #include "../include/queue.h"
 #include "../include/queue1.h"
 #include "../include/queue_processing.h"
 #include "../include/secondary_functions.h"
 #include <iostream>
 
-Queue*  copied_queue = new Queue();
-Queue*  merged_queue = new Queue();
-Queue1* queue1       = new Queue1();
+Queue1* copied_queue = new Queue1();
+Queue1* merged_queue = new Queue1();
 
 /* функция очистки экрана через консоли escape-последовательности */
 void ClearScreen() {
@@ -38,7 +37,7 @@ void ContinueMenu() {
 }
 
 /* функция выбора опции и возврата ее численного значения */
-Queue* SelectOption(Queue* queue) {
+Queue1* SelectOption(Queue1* queue) {
   int option = StoiExceptionsProcessing(0);
   switch (option) {
   case 1:
@@ -51,7 +50,7 @@ Queue* SelectOption(Queue* queue) {
     PrintQueue(queue);
     break;
   case 4:
-    FindSpread(queue1);
+    FindSpread(queue);
     break;
   case 5:
     copied_queue = CopyQueue(queue);
@@ -73,7 +72,7 @@ Queue* SelectOption(Queue* queue) {
 }
 
 /* функция реализации меню */
-void MenuRealization(Queue* queue) {
+void MenuRealization(Queue1* queue) {
   for (;;) {
     ClearScreen();
     PrintMenu();

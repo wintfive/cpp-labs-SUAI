@@ -1,14 +1,14 @@
-#include "../include/queue.h"
+// #include "../include/queue.h"
 #include "../include/queue1.h"
 #include "../include/secondary_functions.h"
 #include <iostream>
 
-Queue* CreateQueue() {
-  Queue* queue = new Queue();
+Queue1* CreateQueue() {
+  Queue1* queue = new Queue1();
   return queue;
 };
 
-Queue* PushQueue(Queue* queue) {
+Queue1* PushQueue(Queue1* queue) {
   int data = 0;
   while (true) {
     std::cout << "Напишите значение добавляемого элемента или напишите "
@@ -26,7 +26,7 @@ Queue* PushQueue(Queue* queue) {
   return queue;
 };
 
-Queue* PopQueue(Queue* queue) {
+Queue1* PopQueue(Queue1* queue) {
   int data = 0;
   while (true) {
     std::cout
@@ -45,15 +45,15 @@ Queue* PopQueue(Queue* queue) {
   return queue;
 };
 
-void PrintQueue(Queue* queue) {
+void PrintQueue(Queue1* queue) {
   queue->Print();
   std::cout << '\n';
 }
 
-void FindSpread(Queue1* queue1) {
+void FindSpread(Queue1* queue) {
   int spread = 0;
   try {
-    spread = queue1->Spread();
+    spread = queue->Spread();
   }
   catch (const std::logic_error& e) {
     std::cerr << e.what() << '\n';
@@ -64,17 +64,17 @@ void FindSpread(Queue1* queue1) {
     << spread << '\n';
 }
 
-Queue* CopyQueue(Queue* queue) {
-  Queue* copied_queue = new Queue(*queue);
+Queue1* CopyQueue(Queue1* queue) {
+  Queue1* copied_queue = new Queue1(*queue);
   return copied_queue;
 }
 
-Queue* MergeQueues(Queue* first, Queue* second) {
-  Queue* merged_queue = new Queue(*first);
+Queue1* MergeQueues(Queue1* first, Queue1* second) {
+  Queue1* merged_queue = new Queue1(*first);
   merged_queue->Merge(second);
   return merged_queue;
 }
 
-void DeleteQueue(Queue* queue) {
+void DeleteQueue(Queue1* queue) {
   delete queue;
 }

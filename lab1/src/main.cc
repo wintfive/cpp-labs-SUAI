@@ -2,7 +2,7 @@
 #include "../include/queue_processing.h"
 
 int main() {
-  Queue* queue = CreateQueue();
+  Queue1* queue = CreateQueue();
   MenuRealization(queue);
   return 0;
 }

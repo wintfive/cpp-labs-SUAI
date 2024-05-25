@@ -1,15 +1,15 @@
 #ifndef QUEUE_PROCESSING
 #define QUEUE_PROCESSING
-#include "queue.h"
+// #include "queue.h"
 #include "queue1.h"
 
-Queue* CreateQueue();
-Queue* PushQueue(Queue* queue);
-Queue* PopQueue(Queue* queue);
-void   PrintQueue(Queue* queue);
-void   FindSpread(Queue1* queue);
-Queue* CopyQueue(Queue* queue);
-Queue* MergeQueues(Queue* first, Queue* second);
-void   DeleteQueue(Queue* queue);
+Queue1* CreateQueue();
+Queue1* PushQueue(Queue1* queue);
+Queue1* PopQueue(Queue1* queue);
+void    PrintQueue(Queue1* queue);
+void    FindSpread(Queue1* queue);
+Queue1* CopyQueue(Queue1* queue);
+Queue1* MergeQueues(Queue1* first, Queue1* second);
+void    DeleteQueue(Queue1* queue);
 
 #endif /* QUEUE_PROCESSING */

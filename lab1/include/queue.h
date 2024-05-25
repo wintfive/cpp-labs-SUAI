@@ -20,7 +20,7 @@ public:
   Queue& operator=(const Queue& original);
   void   Push(int data);
   int    Pop();
-  void   Print();
+  void   Print() const;
   void   Merge(Queue* second);
 };
 
