@@ -1,8 +1,14 @@
 #ifndef QUEUE
 #define QUEUE
-#include "element.h"
 
 class Queue {
+protected:
+  struct Element {
+    int      data;
+    Element* prev;
+    Element(int data);
+  };
+
 private:
   Element* head;
   Element* tail;

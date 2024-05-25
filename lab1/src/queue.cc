@@ -1,8 +1,8 @@
 #include "../include/queue.h"
-#include "../include/element.h"
 #include <iostream>
 #include <limits.h>
 
+Queue::Element::Element(int data) : data(data), prev(nullptr) {};
 Queue::Queue() : head(nullptr), tail(nullptr) {};
 
 Queue::~Queue() {
