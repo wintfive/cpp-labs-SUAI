@@ -1,5 +1,7 @@
 #include <iostream>
 
+/* функция получения целого числа для добавления его значения в очередь
+ */
 int StoiExceptionsProcessing() {
   std::string str    = "";
   int         number = 0;
@@ -25,6 +27,7 @@ int StoiExceptionsProcessing() {
   return number;
 }
 
+/* функция получения команд при извлечении элементов из очереди */
 void StoiExceptionsProcessing(char) {
   std::string str = "";
 
@@ -42,6 +45,7 @@ void StoiExceptionsProcessing(char) {
   }
 }
 
+/* функция получения числа, которое отвечает за пункт меню */
 int StoiExceptionsProcessing(int) {
   std::string str    = "";
   int         number = 0;

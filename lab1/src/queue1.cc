@@ -17,6 +17,8 @@ Queue1& Queue1::operator=(const Queue1& original) {
   return *this;
 }
 
+/* метод вычисления размаха для элементов с нечетным порядковым номером
+ */
 int Queue1::Spread() {
   Element* current     = GetHead();
   int      max_element = INT_MIN;

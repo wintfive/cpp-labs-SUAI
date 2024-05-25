@@ -1,9 +1,11 @@
 #include "../include/queue.h"
 #include <iostream>
 
+/* конструкторы для элемента и очереди */
 Queue::Element::Element(int data) : data(data), prev(nullptr) {};
 Queue::Queue() : head(nullptr), tail(nullptr) {};
 
+/* деструктор */
 Queue::~Queue() {
   while (head != nullptr) {
     Element* current = head;
@@ -12,6 +14,7 @@ Queue::~Queue() {
   }
 };
 
+/* конструктор копирования */
 Queue::Queue(const Queue& original) : head(nullptr), tail(nullptr) {
   Element* current = original.head;
   while (current != nullptr) {
@@ -20,6 +23,7 @@ Queue::Queue(const Queue& original) : head(nullptr), tail(nullptr) {
   }
 }
 
+/* перегруженный оператор присваивания */
 Queue& Queue::operator=(const Queue& original) {
   if (this != &original) {
     this->~Queue();
@@ -28,14 +32,17 @@ Queue& Queue::operator=(const Queue& original) {
   return *this;
 }
 
+/* геттер для head */
 Queue::Element* Queue::GetHead() {
   return head;
 };
 
+/* геттер для tail */
 Queue::Element* Queue::GetTail() {
   return tail;
 };
 
+/* метод добавления элемента в очередь */
 void Queue::Push(int data) {
   Element* element = new Element(data);
   if (head == nullptr) {
@@ -47,6 +54,7 @@ void Queue::Push(int data) {
   }
 }
 
+/* метод извлечения элемента из очереди */
 int Queue::Pop() {
   if (head == nullptr) {
     throw std::logic_error("Очередь пуста.");
@@ -58,6 +66,7 @@ int Queue::Pop() {
   return data;
 }
 
+/* метод вывода очереди на консоль */
 void Queue::Print() const {
   Element* current = head;
   int      counter = 0;
@@ -71,6 +80,7 @@ void Queue::Print() const {
   }
 }
 
+/* метод слияния двух очередей (порядок сохранен) */
 void Queue::Merge(Queue* second) {
   Element* current = second->head;
   while (current != nullptr) {
