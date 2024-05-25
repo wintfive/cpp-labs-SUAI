@@ -1,10 +1,12 @@
 #include "../include/queue.h"
+#include "../include/queue1.h"
 #include "../include/queue_processing.h"
 #include "../include/secondary_functions.h"
 #include <iostream>
 
-Queue* copied_queue = new Queue();
-Queue* merged_queue = new Queue();
+Queue*  copied_queue = new Queue();
+Queue*  merged_queue = new Queue();
+Queue1* queue1       = new Queue1();
 
 /* функция очистки экрана через консоли escape-последовательности */
 void ClearScreen() {
@@ -49,7 +51,7 @@ Queue* SelectOption(Queue* queue) {
     PrintQueue(queue);
     break;
   case 4:
-    FindSpread(queue);
+    FindSpread(queue1);
     break;
   case 5:
     copied_queue = CopyQueue(queue);

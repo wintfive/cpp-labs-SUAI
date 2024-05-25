@@ -1,4 +1,5 @@
 #include "../include/queue.h"
+#include "../include/queue1.h"
 #include "../include/secondary_functions.h"
 #include <iostream>
 
@@ -49,10 +50,10 @@ void PrintQueue(Queue* queue) {
   std::cout << '\n';
 }
 
-void FindSpread(Queue* queue) {
+void FindSpread(Queue1* queue1) {
   int spread = 0;
   try {
-    spread = queue->Spread();
+    spread = queue1->Spread();
   }
   catch (const std::logic_error& e) {
     std::cerr << e.what() << '\n';
