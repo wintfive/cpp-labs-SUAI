@@ -64,6 +64,8 @@ Queue1* SelectOption(Queue1* queue) {
   case 7:
     std::cout << "Программа завершена.\n";
     DeleteQueue(queue);
+    DeleteQueue(copied_queue);
+    DeleteQueue(merged_queue);
     exit(0);
   }
   ContinueMenu();
