@@ -4,7 +4,7 @@
 
 void    ClearScreen();
 void    PrintMenu();
-void    ContinueMenu();
+void    PauseMenu();
 Queue1* SelectOption(Queue1* queue);
 void    MenuRealization(Queue1* queue);
 

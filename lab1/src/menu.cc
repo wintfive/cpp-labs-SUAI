@@ -29,7 +29,7 @@ void PrintMenu() {
 }
 
 /* функция, которая ставит диалоговое окно на паузу */
-void ContinueMenu() {
+void PauseMenu() {
   std::cout << "Для продолжения программы нажмите на Enter...\n";
   std::cin.get();
   std::cin.ignore(256, '\n');
@@ -68,7 +68,7 @@ Queue1* SelectOption(Queue1* queue) {
     DeleteQueue(merged_queue);
     exit(0);
   }
-  ContinueMenu();
+  PauseMenu();
   return queue;
 }
 
