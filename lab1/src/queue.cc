@@ -44,13 +44,13 @@ Queue::Element* Queue::GetTail() {
 
 /* метод добавления элемента в очередь */
 void Queue::Push(int data) {
-  Element* element = new Element(data);
+  Element* current = new Element(data);
   if (head == nullptr) {
-    head = tail = element;
+    head = tail = current;
   }
   else {
-    tail->prev = element;
-    tail       = element;
+    tail->prev = current;
+    tail       = current;
   }
 }
 
