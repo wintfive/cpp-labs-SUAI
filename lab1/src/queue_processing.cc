@@ -11,7 +11,7 @@ Queue1* CreateQueue() {
 /* функция добавления элемента в очередь */
 Queue1* PushQueue(Queue1* queue) {
   int data = 0;
-  while (true) {
+  for (;;) {
     std::cout << "Напишите значение добавляемого элемента или напишите "
                  "'exit', если хотите перестать добавлять элементы: ";
     try {
@@ -30,7 +30,7 @@ Queue1* PushQueue(Queue1* queue) {
 /* функция извлечения элемента из очереди */
 Queue1* PopQueue(Queue1* queue) {
   int data = 0;
-  while (true) {
+  for (;;) {
     std::cout
       << "Напишите 'yes', если хотите извлечь элемент или напишите "
          "'exit', если хотите перестать извлекать элементы: ";
