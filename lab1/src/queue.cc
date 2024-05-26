@@ -71,7 +71,7 @@ void Queue::Print() const {
   Element* current = head;
   int      counter = 0;
   std::cout << "         head                       tail\n"
-            << "         ------------------------------>\n"
+            << "         <------------------------------\n"
             << "Очередь: ";
   while (current != nullptr) {
     ++counter;
