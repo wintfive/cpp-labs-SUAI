@@ -7,4 +7,5 @@ void    PrintMenu();
 void    ContinueMenu();
 Queue1* SelectOption(Queue1* queue);
 void    MenuRealization(Queue1* queue);
+
 #endif /* MENU */

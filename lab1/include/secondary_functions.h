@@ -5,4 +5,4 @@ int  StoiExceptionsProcessing();
 void StoiExceptionsProcessing(char);
 int  StoiExceptionsProcessing(int);
 
-#endif
+#endif /* SECONDARY_FUNCTIONS */
