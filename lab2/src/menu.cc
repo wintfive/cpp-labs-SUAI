@@ -19,10 +19,15 @@ void PrintMenu() {
             << "Выберите вариант: ";
 }
 
-/* функция, которая ставит диалоговое окно на паузу */
+/* функции, которая ставят диалоговое окно на паузу */
 void PauseMenu() {
   std::cout << "Для продолжения программы нажмите на Enter...\n";
   std::cin.get();
+  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+}
+
+void PauseMenu(int) {
+  std::cout << "Для продолжения программы нажмите на Enter...\n";
   std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
 

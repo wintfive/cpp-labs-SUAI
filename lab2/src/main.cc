@@ -3,8 +3,10 @@
 #include "../include/stack_processing.h"
 
 int main() {
+  ClearScreen();
   OperationsWithMyDouble();
-  // Stack* stack = CreateStack();
-  // MenuRealization(stack);
+  PauseMenu(0);
+  Stack* stack = CreateStack();
+  MenuRealization(stack);
   return 0;
 }
