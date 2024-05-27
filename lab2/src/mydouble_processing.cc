@@ -5,6 +5,7 @@
 #include <iostream>
 
 void OperationsWithMyDouble() {
+  std::cout << "Задание №1" << '\n';
   MyDouble value(ReadDouble());
   std::cout << "Искомое число: " << value << '\n';
   ++value;

@@ -76,7 +76,7 @@ int Stack::Pop() {
 /* метод вывода очереди на консоль */
 void Stack::Print() const {
   Element* current = head;
-  std::cout << "head: ";
+  std::cout << "Стек:\nhead: ";
   int first_iteration = 1;
   while (current != nullptr) {
     if (first_iteration) {
