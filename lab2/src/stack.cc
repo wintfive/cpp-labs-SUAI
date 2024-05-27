@@ -71,6 +71,58 @@ Stack& Stack::operator=(const Stack& original) {
   return *this;
 }
 
+/* перегруженный оператор присваивания */
+Stack::Element&
+Stack::Element::operator+=(const Stack::Element& rvalue) {
+  SetData(GetData(this) += GetData(&rvalue), this);
+  return *this;
+}
+
+/* перегруженный оператор присваивания */
+Stack::Element&
+Stack::Element::operator-=(const Stack::Element& rvalue) {
+  SetData(GetData(this) -= GetData(&rvalue), this);
+  return *this;
+}
+
+/* перегруженный оператор присваивания */
+Stack::Element&
+Stack::Element::operator*=(const Stack::Element& rvalue) {
+  SetData(GetData(this) *= GetData(&rvalue), this);
+  return *this;
+}
+
+/* перегруженный оператор присваивания */
+Stack::Element&
+Stack::Element::operator/=(const Stack::Element& rvalue) {
+  SetData(GetData(this) /= GetData(&rvalue), this);
+  return *this;
+}
+
+Stack::Element operator+(const Stack::Element& lvalue,
+                         const Stack::Element& rvalue) {
+  MyDouble summ_data  = GetData(&lvalue);
+  return summ_data   += GetData(&rvalue);
+}
+
+Stack::Element operator-(const Stack::Element& lvalue,
+                         const Stack::Element& rvalue) {
+  MyDouble summ_data  = GetData(&lvalue);
+  return summ_data   -= GetData(&rvalue);
+}
+
+Stack::Element operator*(const Stack::Element& lvalue,
+                         const Stack::Element& rvalue) {
+  MyDouble summ_data  = GetData(&lvalue);
+  return summ_data   *= GetData(&rvalue);
+}
+
+Stack::Element operator/(const Stack::Element& lvalue,
+                         const Stack::Element& rvalue) {
+  MyDouble summ_data  = GetData(&lvalue);
+  return summ_data   /= GetData(&rvalue);
+}
+
 /* метод добавления элемента в очередь */
 void Stack::Push(MyDouble data) {
   // Element  a = 5;

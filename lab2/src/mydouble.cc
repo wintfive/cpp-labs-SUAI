@@ -17,9 +17,57 @@ MyDouble& MyDouble::operator=(const MyDouble& original) {
   return *this;
 }
 
+void MyDouble::SetData(double data) {
+  this->data = data;
+}
+
+MyDouble MyDouble::GetData() const {
+  return this->data;
+}
+
 std::ostream& operator<<(std::ostream& out, const MyDouble& mydouble) {
   out << std::setprecision(15) << mydouble.data;
   return out;
+}
+
+const MyDouble& MyDouble::operator+=(const MyDouble& rvalue) {
+  data += rvalue.data;
+  return *this;
+}
+
+MyDouble operator+(const MyDouble& lvalue, const MyDouble& rvalue) {
+  MyDouble summ_data  = lvalue.GetData();
+  return summ_data   += rvalue.GetData();
+}
+
+const MyDouble& MyDouble::operator-=(const MyDouble& rvalue) {
+  data -= rvalue.data;
+  return *this;
+}
+
+MyDouble operator-(const MyDouble& lvalue, const MyDouble& rvalue) {
+  MyDouble sub_data  = lvalue.GetData();
+  return sub_data   -= rvalue.GetData();
+}
+
+const MyDouble& MyDouble::operator*=(const MyDouble& rvalue) {
+  data *= rvalue.data;
+  return *this;
+}
+
+MyDouble operator*(const MyDouble& lvalue, const MyDouble& rvalue) {
+  MyDouble mul_data  = lvalue.GetData();
+  return mul_data   *= rvalue.GetData();
+}
+
+const MyDouble& MyDouble::operator/=(const MyDouble& rvalue) {
+  data /= rvalue.data;
+  return *this;
+}
+
+MyDouble operator/(const MyDouble& lvalue, const MyDouble& rvalue) {
+  MyDouble div_data  = lvalue.GetData();
+  return div_data   /= rvalue.GetData();
 }
 
 MyDouble& MyDouble::operator++() {

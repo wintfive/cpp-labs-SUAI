@@ -13,8 +13,14 @@ public:
   MyDouble(const MyDouble& original);
   MyDouble& operator=(const MyDouble& original);
 
+  void                  SetData(double data);
+  MyDouble              GetData() const;
   friend std::ostream&  operator<<(std::ostream&   out,
                                   const MyDouble& mydouble);
+  const MyDouble&       operator+=(const MyDouble& rvalue);
+  const MyDouble&       operator-=(const MyDouble& rvalue);
+  const MyDouble&       operator*=(const MyDouble& rvalue);
+  const MyDouble&       operator/=(const MyDouble& rvalue);
   MyDouble&             operator++();
   friend const MyDouble operator++(MyDouble& mydouble, int);
   MyDouble&             operator--();
