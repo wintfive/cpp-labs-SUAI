@@ -2,6 +2,7 @@
 #include "../include/stack.h"
 #include "../include/stack_processing.h"
 #include <iostream>
+#include <limits>
 
 /* функция очистки экрана через консоли escape-последовательности */
 void ClearScreen() {
@@ -22,7 +23,7 @@ void PrintMenu() {
 void ContinueMenu() {
   std::cout << "Для продолжения программы нажмите на Enter...\n";
   std::cin.get();
-  std::cin.ignore(256, '\n');
+  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
 
 /* функция выбора опции и возврата ее численного значения */
