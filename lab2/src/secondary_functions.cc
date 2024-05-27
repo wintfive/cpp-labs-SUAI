@@ -1,5 +1,7 @@
 #include <iostream>
 #include <limits>
+#include <random>
+
 /* функция получения целого числа для добавления его значения в очередь
  */
 int StoiExceptionsProcessing() {
@@ -85,4 +87,25 @@ double ReadDouble() {
   }
   std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
   return user_data;
+}
+
+double RandomDouble() {
+  /* создание объекта для использования генератора случайных чисел и
+   * передача его через конструктор генератору псевдослучайных чисел для
+   * его инициализации */
+  std::random_device rd;
+  std::mt19937       generator(rd());
+
+  double lower_bound = -100.0;
+  double upper_bound = 100.0;
+
+  /* равномерное распределение действительных чисел в заданном диапазоне
+   */
+  std::uniform_real_distribution<> dist(lower_bound, upper_bound);
+
+  /* генерация случайного числа из диапазона с использованием генератора
+   */
+  double random_double = dist(generator);
+  std::cout << "Случайное число: " << random_double << '\n';
+  return random_double;
 }
