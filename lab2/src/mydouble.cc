@@ -16,3 +16,31 @@ MyDouble& MyDouble::operator=(const MyDouble& original) {
   return *this;
 }
 
+std::ostream& operator<<(std::ostream& out, const MyDouble& mydouble) {
+  out << std::setprecision(15) << mydouble.data;
+  return out;
+}
+
+MyDouble& MyDouble::operator++() {
+  data += ReadDouble();
+  return *this;
+}
+
+const MyDouble operator++(MyDouble& mydouble, int) {
+  mydouble.data += RandomDouble();
+  return mydouble.data;
+}
+
+MyDouble& MyDouble::operator--() {
+  data -= RandomDouble();
+  return *this;
+}
+
+const MyDouble operator--(MyDouble& mydouble, int) {
+  mydouble.data -= ReadDouble();
+  return mydouble.data;
+}
+
+const MyDouble MyDouble::operator!() {
+  return -data;
+}
