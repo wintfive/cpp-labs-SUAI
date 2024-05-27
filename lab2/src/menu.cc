@@ -20,7 +20,7 @@ void PrintMenu() {
 }
 
 /* функция, которая ставит диалоговое окно на паузу */
-void ContinueMenu() {
+void PauseMenu() {
   std::cout << "Для продолжения программы нажмите на Enter...\n";
   std::cin.get();
   std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -45,7 +45,7 @@ Stack* SelectOption(Stack* stack) {
     exit(0);
     break;
   }
-  ContinueMenu();
+  PauseMenu();
   return stack;
 }
 

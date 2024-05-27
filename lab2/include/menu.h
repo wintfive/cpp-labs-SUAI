@@ -4,7 +4,7 @@
 
 void   ClearScreen();
 void   PrintMenu();
-void   ContinueMenu();
+void   PauseMenu();
 Stack* SelectOption(Stack* stack);
 void   MenuRealization(Stack* stack);
 
