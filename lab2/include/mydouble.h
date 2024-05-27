@@ -8,6 +8,7 @@ private:
 
 public:
   MyDouble(double data);
+  MyDouble();
   ~MyDouble();
   MyDouble(const MyDouble& original);
   MyDouble& operator=(const MyDouble& original);

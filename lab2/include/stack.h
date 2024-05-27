@@ -8,6 +8,11 @@ private:
     MyDouble data;
     Element* next;
     Element(MyDouble data);
+    Element();
+    ~Element();
+    Element(const Element& original);
+    Element& operator=(const Element& original);
+
     friend MyDouble GetData(const Element* element);
     friend Element* GetNext(const Element* element);
     friend void     SetData(MyDouble data, Element* element);
@@ -17,6 +22,7 @@ private:
 
 public:
   Stack();
+  Stack(int capacity);
   ~Stack();
   Stack(const Stack& original);
   Stack&   operator=(const Stack& original);

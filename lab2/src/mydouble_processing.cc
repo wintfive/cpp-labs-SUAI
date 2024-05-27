@@ -7,6 +7,7 @@
 void OperationsWithMyDouble() {
   std::cout << "Задание №1" << '\n';
   MyDouble value(ReadDouble());
+  // MyDouble value;
   std::cout << "Искомое число: " << value << '\n';
   ++value;
   std::cout << "Префиксная форма инкремента: " << value << '\n';

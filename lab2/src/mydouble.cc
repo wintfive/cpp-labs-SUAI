@@ -3,6 +3,7 @@
 #include <iomanip>
 
 MyDouble::MyDouble(double data) : data(data) {};
+MyDouble::MyDouble() : data(0) {};
 MyDouble::~MyDouble() = default;
 
 /* конструктор копирования */
