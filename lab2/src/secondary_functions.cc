@@ -109,3 +109,14 @@ double RandomDouble() {
   std::cout << "Случайное число: " << random_double << '\n';
   return random_double;
 }
+
+int RandomInt(int lower_bound = 5, int upper_bound = 15) {
+  std::random_device rd;
+  std::mt19937       generator(rd());
+
+  std::uniform_int_distribution<> dist(lower_bound, upper_bound);
+
+  int random_int = dist(generator);
+  std::cout << "Случайное число: " << random_int << '\n';
+  return random_int;
+}
