@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <limits>
 /* функция получения целого числа для добавления его значения в очередь
  */
 int StoiExceptionsProcessing() {
@@ -68,4 +68,21 @@ int StoiExceptionsProcessing(int) {
   }
 
   return number;
+}
+
+double ReadDouble() {
+  double user_data = 0;
+  std::cout << "Введите пользовательское значение (действительное "
+               "число через точку): ";
+  std::cin >> user_data;
+  while (std::cin.fail()) {
+    std::cout
+      << "Вы ввели что-то не то, попробуйте еще раз (необходимо "
+         "действительное число через точку): ";
+    std::cin.clear();
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    std::cin >> user_data;
+  }
+  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+  return user_data;
 }
