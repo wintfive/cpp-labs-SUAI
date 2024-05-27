@@ -29,7 +29,7 @@ public:
   void            Push(MyDouble data);
   MyDouble        Pop();
   void            Print() const;
-  void            Test();
+  void            TestOverloadOperators();
   friend MyDouble GetData(const Element* element);
   friend Element* GetNext(const Element* element);
   friend void     SetData(MyDouble data, Element* element);

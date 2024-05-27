@@ -59,6 +59,10 @@ void PrintStack(Stack* stack) {
   std::cout << '\n';
 }
 
+void TestOverloadOperators(Stack* stack) {
+  stack->TestOverloadOperators();
+}
+
 /* функция удаления стека */
 void DeleteStack(Stack* stack) {
   delete stack;

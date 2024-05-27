@@ -6,6 +6,7 @@ Stack* CreateStack();
 Stack* PushStack(Stack* stack);
 Stack* PopStack(Stack* stack);
 void   PrintStack(Stack* stack);
+void   TestOverloadOperators(Stack* stack);
 void   DeleteStack(Stack* stack);
 
 #endif /* STACK_PROCESSING */

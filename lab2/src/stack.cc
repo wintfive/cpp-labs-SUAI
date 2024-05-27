@@ -140,7 +140,7 @@ void Stack::Push(MyDouble data) {
 /* метод извлечения элемента из очереди */
 MyDouble Stack::Pop() {
   if (head == nullptr) {
-    throw std::logic_error("Очередь пуста.");
+    throw std::logic_error("Стек пуст.");
   }
   Element* current = head;
   MyDouble data    = GetData(head);
@@ -166,4 +166,53 @@ void Stack::Print() const {
     }
     current = GetNext(current);
   }
+}
+
+void Stack::TestOverloadOperators() {
+  std::cout << "Все вычисления будут производиться между самым верхним "
+               "элементом в стеке и следующим за ним:\n";
+  std::cout << "Голова стека: " << GetData(head) << '\n';
+  std::cout << "Следующий элемент стека: " << GetData(head->next)
+            << '\n';
+  std::cout << "Оператор +=: " << GetData(head)
+            << " += " << GetData(head->next) << " = ";
+  SetData(GetData(&(*head += *head->next)), head);
+  std::cout << GetData(head) << '\n';
+  std::cout << "Оператор -=: " << GetData(head)
+            << " -= " << GetData(head->next) << " = ";
+  SetData(GetData(&(*head -= *head->next)), head);
+  std::cout << GetData(head) << '\n';
+  std::cout << "Оператор *=: " << GetData(head)
+            << " *= " << GetData(head->next) << " = ";
+  SetData(GetData(&(*head *= *head->next)), head);
+  std::cout << GetData(head) << '\n';
+  std::cout << "Оператор /=: " << GetData(head)
+            << " /= " << GetData(head->next) << " = ";
+  SetData(GetData(&(*head /= *head->next)), head);
+  std::cout << GetData(head) << '\n';
+  std::cout << "Оператор +: " << GetData(head) << " + "
+            << GetData(head->next) << " = ";
+  Element summ_data = *head + *head->next;
+  SetData(GetData(&summ_data), head);
+  std::cout << GetData(&summ_data) << '\n';
+  std::cout << "Оператор -: " << GetData(head) << " - "
+            << GetData(head->next) << " = ";
+  Element sub_data = *head - *head->next;
+  SetData(GetData(&sub_data), head);
+  std::cout << GetData(&sub_data) << '\n';
+  std::cout << "Оператор *: " << GetData(head) << " * "
+            << GetData(head->next) << " = ";
+  Element mul_data = *head * *head->next;
+  SetData(GetData(&mul_data), head);
+  std::cout << GetData(&mul_data) << '\n';
+  std::cout << "Оператор /: " << GetData(head) << " / "
+            << GetData(head->next) << " = ";
+  Element div_data = *head / *head->next;
+  SetData(GetData(&div_data), head);
+  std::cout << GetData(&div_data) << '\n';
+  std::cout << "Оператор =: " << GetData(head) << " = "
+            << GetData(head->next) << " = ";
+  Element clone_data = *head->next;
+  SetData(GetData(&clone_data), head);
+  std::cout << GetData(&clone_data) << '\n';
 }

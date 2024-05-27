@@ -55,7 +55,7 @@ int StoiExceptionsProcessing(int) {
   while (std::cin >> str) {
     try {
       number = std::stoi(str);
-      if (number < 1 or number > 4)
+      if (number < 1 or number > 5)
         std::cerr << "Введено неподходящее число, попробуйте еще раз: ";
       else
         break;

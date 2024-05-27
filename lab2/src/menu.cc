@@ -16,7 +16,9 @@ void PrintMenu() {
             << "1 – Добавление элемента в стек;\n"
             << "2 – Извлечение элемента из стека;\n"
             << "3 – Вывод стека на экран;\n"
-            << "4 – Выход из программы.\n"
+            << "4 – Тестирование перегруженных "
+               "операторов;\n"
+            << "5 – Выход из программы.\n"
             << "Выберите вариант: ";
 }
 
@@ -46,6 +48,9 @@ Stack* SelectOption(Stack* stack) {
     PrintStack(stack);
     break;
   case 4:
+    TestOverloadOperators(stack);
+    break;
+  case 5:
     std::cout << "Программа завершена.\n";
     DeleteStack(stack);
     exit(0);
