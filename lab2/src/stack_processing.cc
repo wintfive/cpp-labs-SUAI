@@ -1,3 +1,4 @@
+#include "../include/menu.h"
 #include "../include/secondary_functions.h"
 #include "../include/stack.h"
 #include <iostream>
@@ -10,7 +11,7 @@ Stack* CreateStack() {
 
 /* функция добавления элемента в стек */
 Stack* PushStack(Stack* stack) {
-  int data = 0;
+  MyDouble data = 0;
   while (true) {
     std::cout << "Напишите значение добавляемого элемента или напишите "
                  "'exit', если хотите перестать добавлять элементы: ";
@@ -29,7 +30,7 @@ Stack* PushStack(Stack* stack) {
 
 /* функция извлечения элемента из стека */
 Stack* PopStack(Stack* stack) {
-  int data = 0;
+  MyDouble data = 0;
   while (true) {
     std::cout
       << "Напишите 'yes', если хотите извлечь элемент или напишите "

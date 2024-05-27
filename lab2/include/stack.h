@@ -1,15 +1,16 @@
 #ifndef STACK
 #define STACK
+#include "mydouble.h"
 
 class Stack {
 private:
   struct Element {
-    int      data;
+    MyDouble data;
     Element* next;
-    Element(int data);
-    friend int      GetData(const Element* element);
+    Element(MyDouble data);
+    friend MyDouble GetData(const Element* element);
     friend Element* GetNext(const Element* element);
-    friend void     SetData(int data, Element* element);
+    friend void     SetData(MyDouble data, Element* element);
     friend void     SetNext(Element* next, Element* element);
   };
   Element* head;
@@ -18,14 +19,14 @@ public:
   Stack();
   ~Stack();
   Stack(const Stack& original);
-  Stack& operator=(const Stack& original);
-  void   Push(int data);
-  int    Pop();
-  void   Print() const;
+  Stack&   operator=(const Stack& original);
+  void     Push(MyDouble data);
+  MyDouble Pop();
+  void     Print() const;
 
-  friend int      GetData(const Element* element);
+  friend MyDouble GetData(const Element* element);
   friend Element* GetNext(const Element* element);
-  friend void     SetData(int data, Element* element);
+  friend void     SetData(MyDouble data, Element* element);
   friend void     SetNext(Element* next, Element* element);
 };
 

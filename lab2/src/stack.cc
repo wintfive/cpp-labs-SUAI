@@ -3,10 +3,10 @@
 #include <iostream>
 
 /* конструкторы для элемента и стека */
-Stack::Element::Element(int data) : data(data), next(nullptr) {};
+Stack::Element::Element(MyDouble data) : data(data), next(nullptr) {};
 Stack::Stack() : head(nullptr) {};
 
-int GetData(const Stack::Element* element) {
+MyDouble GetData(const Stack::Element* element) {
   return element->data;
 }
 
@@ -14,7 +14,7 @@ Stack::Element* GetNext(const Stack::Element* element) {
   return element->next;
 }
 
-void SetData(int data, Stack::Element* element) {
+void SetData(MyDouble data, Stack::Element* element) {
   element->data = data;
 }
 
@@ -50,7 +50,7 @@ Stack& Stack::operator=(const Stack& original) {
 }
 
 /* метод добавления элемента в очередь */
-void Stack::Push(int data) {
+void Stack::Push(MyDouble data) {
   Element* current = new Element(data);
   if (head == nullptr) {
     head = current;
@@ -62,12 +62,12 @@ void Stack::Push(int data) {
 }
 
 /* метод извлечения элемента из очереди */
-int Stack::Pop() {
+MyDouble Stack::Pop() {
   if (head == nullptr) {
     throw std::logic_error("Очередь пуста.");
   }
   Element* current = head;
-  int      data    = GetData(head);
+  MyDouble data    = GetData(head);
   head             = GetNext(head);
   delete current;
   return data;
@@ -80,11 +80,11 @@ void Stack::Print() const {
   int first_iteration = 1;
   while (current != nullptr) {
     if (first_iteration) {
-      std::cout << std::left << std::setw(16) << current->data << "^\n";
+      std::cout << std::left << std::setw(18) << current->data << "^\n";
       first_iteration = 0;
     }
     else {
-      std::cout << std::left << std::setw(22) << current->data << "|\n";
+      std::cout << std::left << std::setw(24) << current->data << "|\n";
     }
     current = GetNext(current);
   }
