@@ -5,6 +5,7 @@
 
 /* конструкторы для элемента и стека */
 Stack::Element::Element(MyDouble data) : data(data), next(nullptr) {};
+Stack::Element::Element(int data) : data(data), next(nullptr) {};
 Stack::Element::Element() : data(0), next(nullptr) {};
 Stack::Element::~Element() = default;
 
@@ -72,6 +73,8 @@ Stack& Stack::operator=(const Stack& original) {
 
 /* метод добавления элемента в очередь */
 void Stack::Push(MyDouble data) {
+  // Element  a = 5;
+  // Element  a(5);
   Element* current = new Element(data);
   if (head == nullptr) {
     head = current;

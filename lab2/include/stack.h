@@ -8,6 +8,7 @@ private:
     MyDouble data;
     Element* next;
     Element(MyDouble data);
+    explicit Element(int data);
     Element();
     ~Element();
     Element(const Element& original);
