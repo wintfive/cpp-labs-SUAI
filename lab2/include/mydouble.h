@@ -25,7 +25,7 @@ public:
   friend const MyDouble operator++(MyDouble& mydouble, int);
   MyDouble&             operator--();
   friend const MyDouble operator--(MyDouble& mydouble, int);
-  const MyDouble        operator!();
+  const MyDouble        operator!() const;
 };
 
 #endif /* MYDOUBLE */

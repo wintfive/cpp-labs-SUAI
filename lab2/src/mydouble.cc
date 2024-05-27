@@ -90,6 +90,6 @@ const MyDouble operator--(MyDouble& mydouble, int) {
   return mydouble.data;
 }
 
-const MyDouble MyDouble::operator!() {
+const MyDouble MyDouble::operator!() const {
   return -data;
 }
