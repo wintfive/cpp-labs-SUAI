@@ -50,7 +50,6 @@ Queue1* PopQueue(Queue1* queue) {
 
 /* функция вывода очереди на консоль */
 void PrintQueue(Queue1* queue) {
-  ClearScreen();
   queue->Print();
   std::cout << '\n';
 }
