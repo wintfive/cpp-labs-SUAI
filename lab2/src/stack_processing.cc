@@ -59,6 +59,8 @@ void PrintStack(Stack* stack) {
   std::cout << '\n';
 }
 
+/* функция тестирования операторов у элементов стека (класса MyDouble)
+ */
 void TestOverloadOperators(Stack* stack) {
   stack->TestOverloadOperators();
 }

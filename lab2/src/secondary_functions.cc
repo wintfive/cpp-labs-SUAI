@@ -72,6 +72,7 @@ int StoiExceptionsProcessing(int) {
   return number;
 }
 
+/* функция считывания действительного числа с консоли */
 double ReadDouble() {
   double user_data = 0;
   std::cout << "Введите пользовательское значение (действительное "
@@ -89,6 +90,7 @@ double ReadDouble() {
   return user_data;
 }
 
+/* функция получения случайного действительного числа */
 double RandomDouble(double lower_bound = -100.0,
                     double upper_bound = 100.0) {
   /* создание объекта для использования генератора случайных чисел и
@@ -108,6 +110,7 @@ double RandomDouble(double lower_bound = -100.0,
   return random_double;
 }
 
+/* функция получения случайного целого числа */
 int RandomInt(int lower_bound = 5, int upper_bound = 15) {
   std::random_device rd;
   std::mt19937       generator(rd());

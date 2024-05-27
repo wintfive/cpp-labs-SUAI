@@ -17,6 +17,7 @@ MyDouble& MyDouble::operator=(const MyDouble& original) {
   return *this;
 }
 
+/* геттер и сеттер */
 void MyDouble::SetData(double data) {
   this->data = data;
 }
@@ -25,6 +26,7 @@ MyDouble MyDouble::GetData() const {
   return this->data;
 }
 
+/* функции перегрузки операторов */
 std::ostream& operator<<(std::ostream& out, const MyDouble& mydouble) {
   out << std::setprecision(15) << mydouble.data;
   return out;

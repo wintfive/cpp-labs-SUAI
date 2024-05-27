@@ -4,6 +4,7 @@
 #include <iomanip>
 #include <iostream>
 
+/* функция работы с операторами у собственного действительного числа */
 void OperationsWithMyDouble() {
   std::cout << "Задание №1" << '\n';
   MyDouble value(ReadDouble());
