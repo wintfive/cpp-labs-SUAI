@@ -89,15 +89,13 @@ double ReadDouble() {
   return user_data;
 }
 
-double RandomDouble() {
+double RandomDouble(double lower_bound = -100.0,
+                    double upper_bound = 100.0) {
   /* создание объекта для использования генератора случайных чисел и
    * передача его через конструктор генератору псевдослучайных чисел для
    * его инициализации */
   std::random_device rd;
   std::mt19937       generator(rd());
-
-  double lower_bound = -100.0;
-  double upper_bound = 100.0;
 
   /* равномерное распределение действительных чисел в заданном диапазоне
    */
