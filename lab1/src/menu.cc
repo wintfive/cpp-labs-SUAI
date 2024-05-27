@@ -2,6 +2,7 @@
 #include "../include/queue_processing.h"
 #include "../include/secondary_functions.h"
 #include <iostream>
+#include <limits>
 
 Queue1* copied_queue = new Queue1();
 Queue1* merged_queue = new Queue1();
@@ -32,7 +33,7 @@ void PrintMenu() {
 void PauseMenu() {
   std::cout << "Для продолжения программы нажмите на Enter...\n";
   std::cin.get();
-  std::cin.ignore(256, '\n');
+  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
 
 /* функция выбора опции и возврата ее численного значения */
