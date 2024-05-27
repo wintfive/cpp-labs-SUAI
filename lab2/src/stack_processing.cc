@@ -6,6 +6,9 @@
 /* функция создания стека (объект класса Stack) */
 Stack* CreateStack() {
   Stack* stack = new Stack();
+  for (int i = 0; i < RandomInt(); ++i) {
+    stack->Push(RandomDouble(-100, 100));
+  }
   return stack;
 };
 
