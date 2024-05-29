@@ -17,9 +17,8 @@ void PrintMenu() {
             << "Выберите вариант: ";
 }
 
-/* функция, которые ставит диалоговое окно на паузу */
-
-void PauseMenu(int) {
+/* функция, которая ставит диалоговое окно на паузу */
+void PauseMenu() {
   std::cout << "Для продолжения программы нажмите на Enter...\n";
   std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
@@ -39,7 +38,7 @@ Ruble** SelectOption(Ruble** exchanges) {
     exit(0);
     break;
   }
-  PauseMenu(0);
+  PauseMenu();
   return exchanges;
 }
 
