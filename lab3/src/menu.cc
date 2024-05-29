@@ -25,10 +25,11 @@ void PauseMenu() {
 
 /* функция выбора опции и возврата ее численного значения */
 Ruble** SelectOption(Ruble** exchanges) {
-  int option = StoiExceptionsProcessing();
+  int option = StoiExceptionsProcessing(0);
   switch (option) {
   case 1:
     PrintRates(exchanges);
+    exchanges = ChangeRates(exchanges);
     break;
   case 2:
     break;

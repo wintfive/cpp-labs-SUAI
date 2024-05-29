@@ -7,6 +7,7 @@
 
 Ruble** CreateExchanges();
 void    PrintRates(Ruble** exchanges);
+Ruble** ChangeRates(Ruble** exchanges);
 void    DeleteExchanges(Ruble** exchanges);
 
 

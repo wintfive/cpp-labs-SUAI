@@ -1,4 +1,5 @@
 #include "../include/exchange_processing.h"
+#include "../include/secondary_functions.h"
 #include <iostream>
 
 Ruble** CreateExchanges() {
@@ -18,6 +19,30 @@ void PrintRates(Ruble** exchanges) {
   }
 }
 
+Ruble** ChangeRates(Ruble** exchanges) {
+  double new_currency = 0.0;
+  std::cout << "Напишите 'yes', если хотите поменять курсы валют, в "
+               "ином случае напишите что угодно: ";
+  try {
+    StoiExceptionsProcessing();
+  }
+  catch (const std::logic_error& e) {
+    std::cerr << e.what();
+    return exchanges;
+  }
+
+  for (int i = 0; i < 4; ++i) {
+    std::cout << "Напишите новое значение курса для валюты "
+              << exchanges[i]->GetCurrency()
+              << " (отрицательное значение - оставить имеющийся): ";
+    new_currency = ReadDouble();
+    if (new_currency < 0) {
+      continue;
+    }
+    exchanges[i]->SetRate(new_currency);
+  }
+  return exchanges;
+}
 void DeleteExchanges(Ruble** exchanges) {
   for (int i = 0; i < 4; ++i) {
     delete exchanges[i];
