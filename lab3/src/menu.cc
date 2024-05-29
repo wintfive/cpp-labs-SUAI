@@ -34,6 +34,7 @@ Ruble** SelectOption(Ruble** exchanges) {
   int option = StoiExceptionsProcessing();
   switch (option) {
   case 1:
+    PrintRates(exchanges);
     break;
   case 2:
     break;
