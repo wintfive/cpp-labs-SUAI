@@ -13,7 +13,7 @@ public:
   Euro(double rate);
   Euro(const Euro& original);
   Euro& operator=(const Euro& original);
-  ~Euro();
+  ~Euro() override;
   void        SetBalance(double balance) override;
   double      GetBalance() const override;
   void        SetRate(double rate) override;

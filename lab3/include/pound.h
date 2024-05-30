@@ -13,7 +13,7 @@ public:
   Pound(double rate);
   Pound(const Pound& original);
   Pound& operator=(const Pound& original);
-  ~Pound();
+  ~Pound() override;
   void        SetBalance(double balance) override;
   double      GetBalance() const override;
   void        SetRate(double rate) override;
