@@ -33,12 +33,12 @@ Queue& Queue::operator=(const Queue& original) {
 }
 
 /* геттер для head */
-Queue::Element* Queue::GetHead() {
+Queue::Element* Queue::GetHead() const {
   return head;
 };
 
 /* геттер для tail */
-Queue::Element* Queue::GetTail() {
+Queue::Element* Queue::GetTail() const {
   return tail;
 };
 

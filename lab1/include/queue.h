@@ -18,8 +18,8 @@ public:
   ~Queue();
   Queue(const Queue& original);
   Queue&   operator=(const Queue& original);
-  Element* GetHead();
-  Element* GetTail();
+  Element* GetHead() const;
+  Element* GetTail() const;
   void     Push(int data);
   int      Pop();
   void     Print() const;
