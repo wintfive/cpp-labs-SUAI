@@ -1,6 +1,6 @@
 #include "../include/euro.h"
 
-Euro::Euro() : balance(Ruble::GetBalance() * 110.0), rate(110.0) {};
+Euro::Euro() : balance(Ruble::GetBalance() / 110.0), rate(110.0) {};
 Euro::Euro(double rate)
   : balance(Ruble::GetBalance() * rate), rate(rate) {};
 

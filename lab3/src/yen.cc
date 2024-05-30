@@ -1,6 +1,6 @@
 #include "../include/yen.h"
 
-Yen::Yen() : balance(Ruble::GetBalance() * 0.5), rate(0.5) {};
+Yen::Yen() : balance(Ruble::GetBalance() / 0.5), rate(0.5) {};
 Yen::Yen(double rate)
   : balance(Ruble::GetBalance() * rate), rate(rate) {};
 

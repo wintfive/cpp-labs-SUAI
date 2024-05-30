@@ -1,6 +1,6 @@
 #include "../include/dollar.h"
 
-Dollar::Dollar() : balance(Ruble::GetBalance() * 100.0), rate(100.0) {};
+Dollar::Dollar() : balance(Ruble::GetBalance() / 100.0), rate(100.0) {};
 Dollar::Dollar(double rate)
   : balance(Ruble::GetBalance() * rate), rate(rate) {};
 
