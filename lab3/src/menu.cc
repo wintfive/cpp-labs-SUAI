@@ -18,6 +18,12 @@ void PrintMenu() {
 }
 
 /* функции, которые ставят диалоговое окно на паузу */
+void PauseMenu(int) {
+  std::cout << "Для продолжения программы нажмите на Enter...\n";
+  std::cin.get();
+  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+}
+
 void PauseMenu() {
   std::cout << "Для продолжения программы нажмите на Enter...\n";
   std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -30,18 +36,23 @@ Ruble** SelectOption(Ruble** exchanges) {
   case 1:
     PrintRates(exchanges);
     exchanges = ChangeRates(exchanges);
+    PauseMenu();
     break;
   case 2:
     PrintBalance(exchanges);
     exchanges = ChangeBalance(exchanges);
+    PauseMenu();
     break;
   case 3:
+    FileRecovery();
+    PauseMenu(0);
+    break;
+  case 4:
     std::cout << "Программа завершена.\n";
     DeleteExchanges(exchanges);
     exit(0);
     break;
   }
-  PauseMenu();
   return exchanges;
 }
 
