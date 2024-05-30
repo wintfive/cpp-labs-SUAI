@@ -1,6 +1,6 @@
 #include "../include/ruble.h"
 
-Ruble::Ruble() : balance(1000.0) {};
+Ruble::Ruble() : balance(0.0) {};
 Ruble::Ruble(double balance) : balance(balance) {};
 
 Ruble::Ruble(const Ruble& original) {

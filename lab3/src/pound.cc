@@ -1,6 +1,6 @@
 #include "../include/pound.h"
 
-Pound::Pound() : balance(Ruble::GetBalance() / 120.0), rate(120.0) {};
+Pound::Pound() : balance(Ruble::GetBalance()), rate(1.0) {};
 Pound::Pound(double rate)
   : balance(Ruble::GetBalance() * rate), rate(rate) {};
 
