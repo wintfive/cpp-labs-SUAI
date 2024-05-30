@@ -40,16 +40,17 @@ Ruble** ChangeRates(Ruble** exchanges) {
       continue;
     }
     exchanges[i]->SetRate(new_currency);
+    exchanges[i]->SetBalance(exchanges[i]->GetBalance() / new_currency);
   }
   return exchanges;
 }
 
 void PrintBalance(Ruble** exchanges) {
-  std::cout << "Баланс составляет:\n"
+  std::cout << "Баланс составляет: "
             << exchanges[0]->GetBalance() * exchanges[0]->GetRate()
             << " RUB\n";
   for (int i = 0; i < 4; ++i) {
-    std::cout << "или: " << exchanges[i]->GetBalance()
+    std::cout << "или: " << exchanges[i]->GetBalance() << ' '
               << exchanges[i]->GetCurrency() << '\n';
   }
 }

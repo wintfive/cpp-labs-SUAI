@@ -39,7 +39,7 @@ Ruble** SelectOption(Ruble** exchanges) {
     PauseMenu(0);
     break;
   case 2:
-    // exchanges = ChangeBalance(exchanges);
+    PrintBalance(exchanges);
     PauseMenu();
     break;
   case 3:
