@@ -8,5 +8,6 @@
 Ruble** InputFileProcessing(Ruble** exchanges);
 void    OutputFileProcessing(Ruble** exchanges);
 void    FileRecovery();
+void    CorruptedFile();
 
 #endif /* FILE_PROCESSING */

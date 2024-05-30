@@ -54,3 +54,8 @@ void FileRecovery() {
   recover_output_file.close();
   std::cout << "Файлы восстановлены!\n";
 }
+
+void CorruptedFile() {
+  std::cerr << "Файл поврежден. Ошибка.\n";
+  exit(0);
+}
