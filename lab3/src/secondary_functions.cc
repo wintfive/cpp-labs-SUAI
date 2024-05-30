@@ -3,7 +3,7 @@
 #include <random>
 
 /* функция получения числа, которое отвечает за пункт меню */
-int StoiExceptionsProcessing(int) {
+int StoiExceptionsProcessing() {
   std::string str    = "";
   int         number = 0;
 
@@ -25,19 +25,6 @@ int StoiExceptionsProcessing(int) {
   }
 
   return number;
-}
-
-/*  */
-void StoiExceptionsProcessing() {
-  std::string str = "";
-  while (std::cin >> str) {
-    if (str == "yes") {
-      return;
-    }
-    else {
-      throw std::logic_error("");
-    }
-  }
 }
 
 /* функция считывания действительного числа с консоли */

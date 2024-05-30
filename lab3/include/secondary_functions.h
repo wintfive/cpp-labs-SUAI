@@ -1,8 +1,7 @@
 #ifndef SECONDARY_FUNCTIONS
 #define SECONDARY_FUNCTIONS
 
-int    StoiExceptionsProcessing(int);
-void   StoiExceptionsProcessing();
+int    StoiExceptionsProcessing();
 double ReadDouble();
 
 #endif /* SECONDARY_FUNCTIONS */
