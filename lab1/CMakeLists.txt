@@ -4,8 +4,8 @@ cmake_minimum_required(VERSION 3.29)
 # проект, в котором использован язык C++
 project(lab1 LANGUAGES CXX)
 
-# поставлен стандарт языка С++11 и он требуется обязательным при сборке
-set(CMAKE_CXX_STANDARD 11)
+# поставлен стандарт языка С++17 и он требуется обязательным при сборке
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # поставлены флаги для компиляции при сборке
