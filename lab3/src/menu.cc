@@ -1,4 +1,5 @@
 #include "../include/exchange_processing.h"
+#include "../include/file_processing.h"
 #include "../include/secondary_functions.h"
 #include <iostream>
 #include <limits>
@@ -10,10 +11,12 @@ void ClearScreen() {
 
 /* функция вывода меню на консоль */
 void PrintMenu() {
-  std::cout << "Пользовательское меню:\n"
-            << "1 – Вывод и изменение курсов валют;\n"
-            << "2 – Вывод и изменение баланса;\n"
-            << "3 – Выход из программы.\n"
+  std::cout << "Пользовательское меню (изменять курс и баланс через "
+               "файл input.txt):\n"
+            << "1 – Вывод курсов валют;\n"
+            << "2 – Вывод баланса;\n"
+            << "3 – Восстановить файл input.txt\n"
+            << "4 – Выход из программы.\n"
             << "Выберите вариант: ";
 }
 
@@ -32,6 +35,7 @@ void PauseMenu() {
 /* функция выбора опции и возврата ее численного значения */
 Ruble** SelectOption(Ruble** exchanges) {
   int option = StoiExceptionsProcessing(0);
+  exchanges  = InputFileProcessing(exchanges);
   switch (option) {
   case 1:
     PrintRates(exchanges);
@@ -53,6 +57,7 @@ Ruble** SelectOption(Ruble** exchanges) {
     exit(0);
     break;
   }
+  OutputFileProcessing(exchanges);
   return exchanges;
 }
 

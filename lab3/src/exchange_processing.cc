@@ -43,6 +43,7 @@ Ruble** ChangeRates(Ruble** exchanges) {
     exchanges[i]->SetBalance(exchanges[0]->Ruble::GetBalance()
                              / new_rate);
   }
+  std::cout << "Курсы валют изменены!\n";
   return exchanges;
 }
 
@@ -72,6 +73,7 @@ Ruble** ChangeBalance(Ruble** exchanges) {
   for (int i = 0; i < 4; ++i) {
     exchanges[i]->SetBalance(new_balance / exchanges[i]->GetRate());
   }
+  std::cout << "Баланс изменен!\n";
   return exchanges;
 }
 
