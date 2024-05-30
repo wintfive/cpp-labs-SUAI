@@ -1,5 +1,5 @@
-Введите значение баланса (в RUB): 0
-Введите курс: 1 EUR = 1
-Введите курс: 1 USD = 1
-Введите курс: 1 GMP = 1
-Введите курс: 1 JPY = 1
+Enter a balance value (in RUB): 0
+Enter a exchange rate: 1 EUR = 1
+Enter a exchange rate: 1 USD = 1
+Enter a exchange rate: 1 GMP = 1
+Enter a exchange rate: 1 JPY = 1
