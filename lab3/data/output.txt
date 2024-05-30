@@ -1,0 +1,10 @@
+Курсы валют:
+1 EUR = 1 RUB
+1 USD = 1 RUB
+1 GMP = 1 RUB
+1 JPY = 1 RUB
+Баланс составляет: 0 RUB
+или: 0 EUR
+или: 0 USD
+или: 0 GMP
+или: 0 JPY
