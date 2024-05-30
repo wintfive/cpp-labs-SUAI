@@ -18,16 +18,17 @@ void OutputFileProcessing(Ruble** exchanges) {
     std::cerr << "Файл не открылся. Ошибка.\n";
     exit(0);
   }
-  output_file << "Курсы валют:\n1 EUR = " << exchanges[0]->GetRate()
-              << ' ' << "RUB\n1 USD = " << exchanges[1]->GetRate()
-              << ' ' << "RUB\n1 GMP = " << exchanges[2]->GetRate()
-              << ' ' << "RUB\n1 JPY = " << exchanges[3]->GetRate()
-              << " RUB\nБаланс составляет: "
-              << exchanges[0]->Ruble::GetBalance()
-              << " RUB\nили: " << exchanges[0]->GetBalance()
-              << " EUR\nили: " << exchanges[1]->GetBalance()
-              << " USD\nили: " << exchanges[2]->GetBalance()
-              << " GMP\nили: " << exchanges[3]->GetBalance() << " JPY";
+  output_file << "Курсы валют:\n";
+  for (int i = 0; i < 4; ++i) {
+    output_file << "1 " << exchanges[i]->GetCurrency() << " = "
+                << exchanges[i]->GetRate() << " RUB " << '\n';
+  }
+  output_file << "Баланс составляет: "
+              << exchanges[0]->Ruble::GetBalance() << " RUB\n";
+  for (int i = 0; i < 4; ++i) {
+    output_file << "или: " << exchanges[i]->GetBalance() << ' '
+                << exchanges[i]->GetCurrency() << '\n';
+  }
   output_file.close();
 }
 
@@ -47,7 +48,8 @@ void FileRecovery() {
 
   recover_output_file
     << "Курсы валют:\n1 EUR = 1 RUB\n1 USD = 1 RUB\n1 GMP = 1 RUB\n1 "
-       "JPY = 1 RUB\nБаланс составляет: 0 RUB\nили: 0 EUR\nили: 0 USD\n"
+       "JPY = 1 RUB\nБаланс составляет: 0 RUB\nили: 0 EUR\nили: 0 "
+       "USD\n"
        "или: 0 GMP\nили: 0 JPY";
 
   recover_input_file.close();
