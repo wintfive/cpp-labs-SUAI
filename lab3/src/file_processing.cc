@@ -32,7 +32,8 @@ Ruble** InputFileProcessing(Ruble** exchanges) {
     if (str.size() < 31)
       CorruptedFile();
     sub_str = str.substr(31);
-    std::istringstream iss(sub_str);
+    iss.clear();
+    iss.str(sub_str);
     iss >> new_rate;
     if (iss.fail())
       CorruptedFile();
