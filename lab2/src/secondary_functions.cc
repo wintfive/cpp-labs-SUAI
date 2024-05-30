@@ -1,35 +1,37 @@
 #include <iostream>
 #include <limits>
 #include <random>
+#include <sstream>
 
-/* функция получения целого числа для добавления его значения в очередь
+/* функция получения действительного числа для добавления его значения в
+ * стек
  */
-int StoiExceptionsProcessing() {
+double StoiExceptionsProcessing() {
   std::string str    = "";
-  int         number = 0;
-
-  while (std::cin >> str) {
-    if (str == "exit") {
-      throw std::logic_error(
-        "Введена команда 'exit', добавление элементов прекращено.");
-    }
-    try {
-      number = std::stoi(str);
+  double      number = 0;
+  std::cin >> str;
+  if (str == "exit") {
+    throw std::logic_error(
+      "Введена команда 'exit', добавление элементов прекращено.");
+  }
+  std::istringstream iss(str);
+  iss >> number;
+  while (true) {
+    if (!iss.fail())
       break;
-    }
-    catch (const std::invalid_argument& e) {
-      std::cerr << "Введено не число, попробуйте еще раз: ";
-    }
-    catch (const std::out_of_range& e) {
-      std::cerr
-        << "Введено слишком большое число, попробуйте еще раз: ";
-    }
+    std::cout
+      << "Вы ввели что-то не то, попробуйте еще раз (необходимо "
+         "действительное число через точку): ";
+    std::cin >> str;
+    iss.clear();
+    iss.str(str);
+    iss >> number;
   }
 
   return number;
 }
 
-/* функция получения команд при извлечении элементов из очереди */
+/* функция получения команд при извлечении элементов из стека */
 void StoiExceptionsProcessing(char) {
   std::string str = "";
 
