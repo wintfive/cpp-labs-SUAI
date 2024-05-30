@@ -1,13 +1,46 @@
 #include "../include/file_processing.h"
+#include "../include/exchange_processing.h"
 #include <fstream>
 #include <iostream>
+#include <sstream>
 
 Ruble** InputFileProcessing(Ruble** exchanges) {
   std::ifstream input_file("../data/input.txt");
+  std::string   str          = "";
+  std::string   sub_str      = "";
+  double        new_balance  = 0.0;
+  double        new_rate     = 1.0;
+  double        new_rates[4] = {0, 0, 0, 0};
   if (!input_file.is_open()) {
     std::cerr << "Файл не открылся. Ошибка.\n";
     exit(0);
   }
+
+  std::getline(input_file, str);
+  if (str.size() < 32)
+    CorruptedFile();
+  sub_str = str.substr(32);
+  std::istringstream iss(sub_str);
+  iss >> new_balance;
+  if (iss.fail())
+    CorruptedFile();
+  else
+    exchanges = ChangeBalance(exchanges, new_balance);
+
+  for (int i = 0; i < 4; ++i) {
+    std::getline(input_file, str);
+    if (str.size() < 31)
+      CorruptedFile();
+    sub_str = str.substr(31);
+    std::istringstream iss(sub_str);
+    iss >> new_rate;
+    if (iss.fail())
+      CorruptedFile();
+    else
+      new_rates[i] = new_rate;
+  }
+  ChangeRates(exchanges, new_rates);
+
   input_file.close();
   return exchanges;
 }

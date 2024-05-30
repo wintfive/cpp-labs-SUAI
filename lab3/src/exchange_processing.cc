@@ -19,31 +19,16 @@ void PrintRates(Ruble** exchanges) {
   }
 }
 
-Ruble** ChangeRates(Ruble** exchanges) {
-  double new_rate = 0.0;
-  std::cout << "Напишите 'yes', если хотите поменять курсы валют, в "
-               "ином случае напишите что угодно: ";
-  try {
-    StoiExceptionsProcessing();
-  }
-  catch (const std::logic_error& e) {
-    std::cerr << e.what();
-    return exchanges;
-  }
-
+Ruble** ChangeRates(Ruble** exchanges, double new_rates[]) {
+  double new_rate = 1.0;
   for (int i = 0; i < 4; ++i) {
-    std::cout << "Напишите новое значение курса для валюты "
-              << exchanges[i]->GetCurrency()
-              << " (отрицательное значение - оставить имеющийся): ";
-    new_rate = ReadDouble();
-    if (new_rate < 0) {
-      continue;
-    }
+    new_rate = new_rates[i];
+    if (new_rate <= 0)
+      new_rate = 1.0;
     exchanges[i]->SetRate(new_rate);
     exchanges[i]->SetBalance(exchanges[0]->Ruble::GetBalance()
                              / new_rate);
   }
-  std::cout << "Курсы валют изменены!\n";
   return exchanges;
 }
 
@@ -56,24 +41,11 @@ void PrintBalance(Ruble** exchanges) {
   }
 }
 
-Ruble** ChangeBalance(Ruble** exchanges) {
-  std::cout << "Напишите 'yes', если хотите поменять баланс, в "
-               "ином случае напишите что угодно: ";
-  try {
-    StoiExceptionsProcessing();
-  }
-  catch (const std::logic_error& e) {
-    std::cerr << e.what();
-    return exchanges;
-  }
-
-  std::cout << "Напишите новое значение баланса в RUB: ";
-  double new_balance = ReadDouble();
+Ruble** ChangeBalance(Ruble** exchanges, double new_balance) {
   exchanges[0]->Ruble::SetBalance(new_balance);
   for (int i = 0; i < 4; ++i) {
     exchanges[i]->SetBalance(new_balance / exchanges[i]->GetRate());
   }
-  std::cout << "Баланс изменен!\n";
   return exchanges;
 }
 

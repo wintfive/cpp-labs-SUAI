@@ -36,20 +36,16 @@ void PauseMenu() {
 Ruble** SelectOption(Ruble** exchanges) {
   int option = StoiExceptionsProcessing(0);
   exchanges  = InputFileProcessing(exchanges);
+  OutputFileProcessing(exchanges);
   switch (option) {
   case 1:
     PrintRates(exchanges);
-    exchanges = ChangeRates(exchanges);
-    PauseMenu();
     break;
   case 2:
     PrintBalance(exchanges);
-    exchanges = ChangeBalance(exchanges);
-    PauseMenu();
     break;
   case 3:
     FileRecovery();
-    PauseMenu(0);
     break;
   case 4:
     std::cout << "Программа завершена.\n";
@@ -57,7 +53,7 @@ Ruble** SelectOption(Ruble** exchanges) {
     exit(0);
     break;
   }
-  OutputFileProcessing(exchanges);
+  PauseMenu(0);
   return exchanges;
 }
 
