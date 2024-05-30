@@ -43,6 +43,17 @@ Ruble** ChangeRates(Ruble** exchanges) {
   }
   return exchanges;
 }
+
+void PrintBalance(Ruble** exchanges) {
+  std::cout << "Баланс составляет:\n"
+            << exchanges[0]->GetBalance() * exchanges[0]->GetRate()
+            << " RUB\n";
+  for (int i = 0; i < 4; ++i) {
+    std::cout << "или: " << exchanges[i]->GetBalance()
+              << exchanges[i]->GetCurrency() << '\n';
+  }
+}
+
 void DeleteExchanges(Ruble** exchanges) {
   for (int i = 0; i < 4; ++i) {
     delete exchanges[i];
