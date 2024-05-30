@@ -21,8 +21,8 @@ double Pound::GetBalance() const {
   return balance;
 }
 
-void Pound::SetBalance(double) {
-  this->balance = Ruble::GetBalance() * rate;
+void Pound::SetBalance(double balance) {
+  this->balance = balance;
 }
 
 double Pound::GetRate() const {

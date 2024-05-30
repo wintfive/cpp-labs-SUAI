@@ -14,7 +14,7 @@ public:
   Yen(const Yen& original);
   Yen& operator=(const Yen& original);
   ~Yen();
-  void        SetBalance(double) override;
+  void        SetBalance(double balance) override;
   double      GetBalance() const override;
   void        SetRate(double rate) override;
   double      GetRate() const override;

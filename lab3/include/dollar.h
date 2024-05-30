@@ -14,7 +14,7 @@ public:
   Dollar(const Dollar& original);
   Dollar& operator=(const Dollar& original);
   ~Dollar();
-  void        SetBalance(double) override;
+  void        SetBalance(double balance) override;
   double      GetBalance() const override;
   void        SetRate(double rate) override;
   double      GetRate() const override;

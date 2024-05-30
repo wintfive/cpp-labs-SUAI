@@ -21,8 +21,8 @@ double Dollar::GetBalance() const {
   return balance;
 }
 
-void Dollar::SetBalance(double) {
-  this->balance = Ruble::GetBalance() * rate;
+void Dollar::SetBalance(double balance) {
+  this->balance = balance;
 }
 
 double Dollar::GetRate() const {

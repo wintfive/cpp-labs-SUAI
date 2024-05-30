@@ -14,7 +14,7 @@ public:
   Pound(const Pound& original);
   Pound& operator=(const Pound& original);
   ~Pound();
-  void        SetBalance(double) override;
+  void        SetBalance(double balance) override;
   double      GetBalance() const override;
   void        SetRate(double rate) override;
   double      GetRate() const override;
