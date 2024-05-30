@@ -1,3 +1,4 @@
+#include "../include/array_processing.h"
 #include "../include/menu_stack.h"
 #include "../include/secondary_functions.h"
 #include <iostream>
@@ -32,14 +33,30 @@ int SelectArray() {
 
   switch (option) {
   case 1:
+    CreateArray<int>(array_int);
+    PrintArray<int>(array_int);
+    AverageArray<int>(array_int);
     break;
   case 2:
+    CreateArray<char>(array_char);
+    PrintArray<char>(array_char);
+    AverageArray<char>(array_char);
     break;
   case 3:
+    CreateArray<float>(array_float);
+    PrintArray<float>(array_float);
+    AverageArray<float>(array_float);
     break;
   case 4:
+    CreateArray<double>(array_double);
+    PrintArray<double>(array_double);
+    AverageArray<double>(array_double);
     break;
   case 5:
+    CreateArray<char*>(array_char_pointer);
+    PrintArray<char*>(array_char_pointer);
+    AverageArray<char*>(array_char_pointer);
+    DeleteCharPointerArray(array_char_pointer);
     break;
   case 6:
     return 0;
