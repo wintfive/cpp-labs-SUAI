@@ -1,8 +1,13 @@
 #include "../include/array_processing.h"
-#include "../include/menu_stack.h"
 #include "../include/secondary_functions.h"
 #include <iostream>
+#include <limits>
 #include <vector>
+
+/* функция очистки экрана через консоли escape-последовательности */
+void ClearScreen() {
+  std::cout << "\033[2J\033[1;1H";
+}
 
 /* функция вывода меню на консоль */
 void PrintMenuArray() {
@@ -20,6 +25,18 @@ void PrintMenuArray() {
                "среднего арифметического длин его элементов;\n"
             << "6 – Перейти к заданию №2.\n"
             << "Выберите вариант: ";
+}
+
+/* функции, которые ставят диалоговое окно на паузу */
+void PauseMenu() {
+  std::cout << "Для продолжения программы нажмите на Enter...\n";
+  std::cin.get();
+  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+}
+
+void PauseMenu(int) {
+  std::cout << "Для продолжения программы нажмите на Enter...\n";
+  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
 
 /* функция выбора опции и возврата ее численного значения */

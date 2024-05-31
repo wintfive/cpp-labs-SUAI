@@ -1,7 +1,9 @@
 #ifndef MENU_ARRAY
 #define MENU_ARRAY
-#include "stack.h"
 
+void ClearScreen();
+void PauseMenu();
+void PauseMenu(int);
 void PrintMenu();
 int  SelectArray();
 void MenuArrayRealization();
