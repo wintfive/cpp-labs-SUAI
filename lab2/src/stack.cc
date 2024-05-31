@@ -71,28 +71,24 @@ Stack& Stack::operator=(const Stack& original) {
   return *this;
 }
 
-/* перегруженный оператор присваивания */
 Stack::Element&
 Stack::Element::operator+=(const Stack::Element& rvalue) {
   SetData(GetData(this) += GetData(&rvalue), this);
   return *this;
 }
 
-/* перегруженный оператор присваивания */
 Stack::Element&
 Stack::Element::operator-=(const Stack::Element& rvalue) {
   SetData(GetData(this) -= GetData(&rvalue), this);
   return *this;
 }
 
-/* перегруженный оператор присваивания */
 Stack::Element&
 Stack::Element::operator*=(const Stack::Element& rvalue) {
   SetData(GetData(this) *= GetData(&rvalue), this);
   return *this;
 }
 
-/* перегруженный оператор присваивания */
 Stack::Element&
 Stack::Element::operator/=(const Stack::Element& rvalue) {
   SetData(GetData(this) /= GetData(&rvalue), this);
@@ -123,7 +119,7 @@ Stack::Element operator/(const Stack::Element& lvalue,
   return summ_data   /= GetData(&rvalue);
 }
 
-/* метод добавления элемента в очередь */
+/* метод добавления элемента в стек */
 void Stack::Push(MyDouble data) {
   // Element  a = 5;
   // Element  a(5);
@@ -137,7 +133,7 @@ void Stack::Push(MyDouble data) {
   }
 }
 
-/* метод извлечения элемента из очереди */
+/* метод извлечения элемента из стека */
 MyDouble Stack::Pop() {
   if (head == nullptr) {
     throw std::logic_error("Стек пуст.");
@@ -149,7 +145,7 @@ MyDouble Stack::Pop() {
   return data;
 }
 
-/* метод вывода очереди на консоль */
+/* метод вывода стека на консоль */
 void Stack::Print() const {
   Element* current = head;
   std::cout << "Стек:\nhead: ";
